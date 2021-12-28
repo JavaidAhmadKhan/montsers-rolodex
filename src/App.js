@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { CardList } from "./components/CardList";
+import Footer from "./components/Footer";
+import { SearchBox } from "./components/SearchBox";
 
 class App extends Component {
   constructor() {
@@ -17,17 +19,23 @@ class App extends Component {
   }
 
   render() {
+    const { monsters, searchField } = this.state;
+    const filteredMonsters = monsters.filter((monster) =>
+      monster.name.toLowerCase().includes(searchField.toLowerCase())
+    );
     return (
-      <div className="App">
-        <div className="flex flex-grow w-max p-8 m-auto ">
-          <input
-            className="flex flex-grow h-14 text-center bg-gray-50 text-gray-600 shadow-lg rounded-full p-6 outline-none "
-            type="search"
+      <div className=" bg-blue-200 p-2 ">
+        <div className="App">
+          <h1 className="font-serif text-blue-600 text-center  font-extrabold text-4xl p-2 ">
+            Monsters Rolodex
+          </h1>
+          <SearchBox
             placeholder="search monsters"
-            onChange={(e) => this.setState({ searchField: e.target.value })}
+            handleChange={(e) => this.setState({ searchField: e.target.value })}
           />
+          <CardList monsters={filteredMonsters} />
+          <Footer/>
         </div>
-        <CardList monsters={this.state.monsters} />
       </div>
     );
   }
