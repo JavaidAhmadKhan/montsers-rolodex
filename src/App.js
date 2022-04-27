@@ -7,7 +7,6 @@ const App = () => {
   const [searchField, setSearchField] = useState("");
   const [monsters, setMonsters] = useState([]);
   const [filteredMonsters, setFilteredMonsters] = useState(monsters);
-
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
@@ -29,7 +28,7 @@ const App = () => {
   return (
     <div>
       <div>
-        <h1 className=" font-serif text-blue-600 text-center  font-extrabold text-4xl p-2 mt-12 ">
+        <h1 className="  text-blue-600 text-center  font-black text-3xl p-2 mt-12 md:text-4xl italic font-mono uppercase ">
           Monsters Rolodex
         </h1>
         <SearchBox

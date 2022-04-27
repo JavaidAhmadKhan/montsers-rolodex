@@ -1,6 +1,6 @@
 const Card = ({ monster: { id, name, email } }) => {
   return (
-    <div className="flex flex-grow cursor-pointer drop-shadow-2xl border-2 p-10 m-4 transition ease-in-out delay-105 hover:-translate-y-1 hover:scale-105 duration-300 rounded-md">
+    <div className="flex flex-grow cursor-pointer drop-shadow-2xl border-2 p-10 m-4 transition ease-in-out delay-105 hover:-translate-y-1 hover:scale-105 duration-300 rounded-md ">
       <div>
         <img
           className="flex object-contain items-center"
