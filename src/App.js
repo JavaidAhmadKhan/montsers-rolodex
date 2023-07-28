@@ -49,13 +49,15 @@ const App = () => {
   } else {
     return (
       <div>
-        <h1 className="text-white text-center font-black text-3xl p-2 mt-12 md:text-3xl italic font-mono">
-          Robo Friends
-        </h1>
-        <SearchBox
-          placeholder="search monsters"
-          onChangeHandler={onSearchChange}
-        />
+        <div className="flex flex-col md:flex-row lg:flex-row items-center justify-center gap-4 p-3 sticky top-0 z-10 left-0 right-0 bg-[#72b3b5]">
+          <h1 className="text-white  font-black text-3xl md:text-3xl italic font-mono">
+            Robo Friends
+          </h1>
+          <SearchBox
+            placeholder="search monsters"
+            onChangeHandler={onSearchChange}
+          />
+        </div>
         <CardList monsters={filteredMonsters} />
         <Footer />
       </div>
